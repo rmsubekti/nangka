@@ -1,0 +1,17 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html lang="en">
+    {%- include head.html -%}
+<body>
+    <div class="wrapper{% if page.layout %} {{ page.layout }}{% endif %}">
+        {%- include header.html -%}
+    <div class="content-wrapper">
+        {%- include partial/breadcrumb.html -%}
+        {{ content }}
+    </div>
+    {%- include footer.html -%}
+    </div>
+</body>
+</html>

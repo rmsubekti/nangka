@@ -1,0 +1,16 @@
+<div class="mini-bio">
+    <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <a rel="me" href="http://twitter.com/{{ site.twitter_username }}">
+          <img alt="{{ site.title }}" class="avatar" src="{{ site.author_avatar | default: '/assets/icons/512.png' | relative_url }}" width="70" height="70">
+        <div><span class="name" itemprop="name">{{ site.title }}</span><span>{{ site.description }}</span></div>
+      </a>
+  </div>
+  <span class="share">
+      <a class="twitter" id="twitter" aria-labelledby="twitter post-title" href="https://twitter.com/intent/tweet?text={{ page.url | prepend: site.baseurl | prepend: site.url }} - {{page.title}} by @{{ site.twitter.username }}">
+        <span class="icon">{%- include svg/icon-twitter.svg -%} Tweet</span>
+      </a>
+      <a class="facebook" id="facebook" aria-labelledby="facebook post-title" href="https://www.facebook.com/dialog/feed?app_id=600141373527242&display=popup&amp;caption={{ page.title | url_encode }}&link={{ site.url | append: site.baseurl | append: page.url | url_encode }}&redirect_uri={{ site.url | append: site.baseurl | append: page.url | url_encode }}">
+        <span class="icon">{%- include svg/icon-facebook.svg -%} Share</span>
+      </a>
+  </span>
+</div>

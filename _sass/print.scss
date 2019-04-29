@@ -1,0 +1,102 @@
+@media print {
+    @page {
+        margin: 1.2cm;
+    }    
+    
+    body {
+        font: 12pt Georgia, "Times New Roman", Times, serif;
+        line-height: 1.3;
+        background: #fff !important;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    p {
+        orphans: 2;
+        widows: 2;
+    }
+
+    pre,code{
+        font-size: inherit;
+    }
+
+
+    .wrapper > :not(.content-wrapper), .content-wrapper > :not(article), footer, .time {
+        display: none;
+    }
+
+    h1 {
+        column-span: all;
+        break-before: column;
+        break-inside: avoid-column;
+        break-after: avoid-column;
+        font-size: 24pt;
+        background: #5c5c5c;
+        color: #fff !important;
+        -moz-color: #fff !important;
+        padding: 0 5pt;
+        border: none;
+        line-height: 1.4;
+        display: inline;
+    }
+
+    h2 {
+        font-size: 14pt;
+        margin-top: 25px;
+        break-after: avoid;
+    }
+
+    blockquote, ul {
+        margin: 0;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        content: "» ";
+        word-wrap: break-word;
+    }
+
+    a {
+        color: #000;
+        word-wrap: break-word;
+    }
+
+    p a[href^="http://"]:after, a[href^="https://"]:after {
+        content: " (" attr(href) ")";
+        font-weight: normal;
+        font-size: 10pt;
+        font-style: italic;
+        border: none;
+    }
+
+    abbr:after {
+        content: " (" attr(title) ")";
+        font-weight: 100;
+        font-style: italic;
+        border: none;
+    }
+
+    p a[href^="#"]:after {
+        display: none;
+    }
+
+    .wrapper {
+        max-width: 100% !important;
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+    .post-meta {
+        margin: 0 0 .5cm 0;
+        :before {
+            content: $domain " - ";
+        }
+    }
+    img{
+        display: block;
+        margin: 0 auto;
+    }
+}

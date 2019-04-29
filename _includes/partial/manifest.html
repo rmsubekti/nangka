@@ -1,0 +1,52 @@
+<!-- See https://goo.gl/OOhYW5 -->
+<link rel="manifest" href="{{ '/manifest.json' | relative_url }}">
+<!-- See https://goo.gl/qRE0vM -->
+<meta name="theme-color" content="#a2466c">
+<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="{{ site.title }}"/>
+<!-- Default icons -->
+<link rel="icon" href="{{ site.favicon | default: '/assets/icons/favicon.ico' | relative_url}}" type="image/x-icon">
+<link rel="shortcut icon" href="{{ site.favicon | default: '/assets/icons/favicon.ico' | relative_url}}" type="image/x-icon">
+<link rel="icon" type="image/png" href="{{'/assets/icons/32.png' | relative_url}}" sizes="32x32">
+<link rel="icon" type="image/png" href="{{'/assets/icons/192.png' | relative_url}}" sizes="192x192">
+<link rel="icon" type="image/png" href="{{'/assets/icons/96.png' | relative_url}}" sizes="96x96">
+<link rel="icon" type="image/png" href="{{'/assets/icons/16.png' | relative_url}}" sizes="16x16">
+<link rel="mask-icon" href="{{'/assets/icons/icon.svg' | relative_url}}" color="#5bbad5">
+<!-- Homescreen icons -->
+<link rel="apple-touch-icon" href="{{'/assets/icons/48.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="57x57" href="{{'/assets/icons/57.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="60x60" href="{{'/assets/icons/60.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="72x72" href="{{'/assets/icons/72.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="76x76" href="{{'/assets/icons/76.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="96x96" href="{{'/assets/icons/96.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="120x120" href="{{'/assets/icons/120.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="144x144" href="{{'/assets/icons/144.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="152x152" href="{{'/assets/icons/152.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{'/assets/icons/180.png' | relative_url}}">
+<link rel="apple-touch-icon" sizes="192x192" href="{{'/assets/icons/192.png' | relative_url}}">
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+<!-- specifying a startup image -->
+<link rel="apple-touch-startup-image" href="{{'/assets/icons/144.png' | relative_url}}">
+<!-- enables or disables automatic detection of possible phone numbers -->
+<meta name="format-detection" content="telephone=no">
+<!-- Tile icon for Windows 8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage" content="{{'/assets/icons/144.png' | relative_url}}">
+<meta name="msapplication-TileColor" content="#fff">
+<meta name="msapplication-tap-highlight" content="no">
+<meta name="msapplication-navbutton-color" content="#fff">
+<link href="{{ '/opensearch.xml' | relative_url }}" rel="search" title="{{ site.title }}" type="application/opensearchdescription+xml">
+<!--   Dublin Core metadata -->
+<meta name="DC.title" content="{{ page.title | default: site.title }}" />
+<meta name="DC.creator" content="{{ page.author | default: site.twitter_username}}" />
+{%- if page.editor -%}
+<meta name="DC.contributor" content="{{ page.editor }}" />
+{%- endif -%}
+{%- if page.rights -%}
+<meta name="DC.rights" content="{{ page.rights }}" />
+{%- endif -%}
+<meta name="DC.date" content="{{ page.date | default: site.time }}" />
+<meta name="DC.source" content="{{ site.title }}" />

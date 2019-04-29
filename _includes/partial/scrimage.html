@@ -1,0 +1,26 @@
+{% assign post = include.post %}
+{%- assign foundImage = false -%}
+{%- assign imageUrl = false -%}
+{%- assign images = post.content | split:'<img ' -%}
+{%- for image in images -%}
+  {%- if image contains 'src' -%}
+    {%- unless foundImage -%}
+      {%- assign foundImage = image | split:'/>' | first -%}
+      {%- assign curImage = image | split:'src="' | last -%}
+      {%- assign imageUrl = curImage | split:'" alt=' | first -%}
+      {% break %}
+    {%- endunless -%}
+  {%- endif -%} 
+{%- endfor -%}
+
+{%- if post.date -%}
+    {%- case include.type -%}
+    {%- when 'microdata' -%}
+        <meta itemprop="image" content="{{ post.image | default : imageUrl  | default : '/assets/icons/512.png' | absolute_url }}" />
+    {% when 'ogimage' %}
+        {%- unless post.image -%}
+        <meta  property="og:image" content="{{ imageUrl | default : '/assets/icons/512.png' | absolute_url }}" />
+        {%- endunless -%}
+    {%- else -%}
+  {% endcase %}
+{% endif %}

@@ -1,0 +1,21 @@
+---
+layout: default
+menu: Blog
+---
+<div class="home">
+    <h4 class="page-heading">Page {{ paginator.page }}/{{ paginator.total_pages }}</h4>
+    <section class="post-list">
+        {%- for post in paginator.posts -%}
+        {%- include partial/post-item.html post=post -%}
+        {%- endfor -%}
+    </section>
+    {%- if paginator.total_pages > 1 -%}
+    <!-- Pagination links -->
+    <div class="pagination">
+        {%- if paginator.previous_page -%} <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="prev">Newer</a>
+        {%- endif -%}
+        {%- if paginator.next_page -%} <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">Older</a>
+        {%- endif -%}
+    </div>
+    {%- endif -%}
+</div>

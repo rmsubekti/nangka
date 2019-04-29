@@ -1,0 +1,17 @@
+<footer class="site-footer">
+    <small class="copy">
+        {{ site.title }} &copy; {{ site.time | date: '%Y' }}
+    </small>
+</footer>
+{%- unless jekyll.environment == "development" -%}
+{%- include partial/analytics.html -%}
+<!--script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script-->
+<script type="text/javascript" src="{{ '/assets/js/app.js' | absolute_url }}" async></script>
+{%- endunless -%}
+{%- if page.script -%}
+{%- if page.script contains '://' -%}
+<script type="text/javascript" src="{{ page.script }}" async></script>
+{%- else -%}
+<script type="text/javascript" src="{{ page.script | absolute_url }}" async></script>
+{%- endif -%}
+{%- endif -%}

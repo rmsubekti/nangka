@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="home">
+    <h4 class="page-heading">{{ site.description }}</h4>
+    <section class="post-list">
+        {%- for post in site.posts limit:10 -%}
+        {%- include partial/post-item.html post=post -%}
+        {%- endfor -%}
+    </section>
+</div>
