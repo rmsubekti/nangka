@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 Gem::Specification.new do |spec|
-  spec.name          = "nangka"
+  spec.name          = "jekyll-theme-nangka"
   spec.version       = "0.1.0"
   spec.authors       = ["Rahmat Subekti"]
-  spec.email         = ["rahmatsubekti@live.com"]
+  spec.email         = ["rmsubekti@hotmail.com"]
 
   spec.summary       = "Simple jekyll theme nangka"
   spec.homepage      = "https://github.com/rmsubekti/nangka"
