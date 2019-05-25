@@ -3,19 +3,16 @@ layout: null
 permalink: /humans.txt
 ---
 /* TEAM */
-	Standard Man: {{ site.author | default : site.title }}
+	Just : {{ site.author | default : site.title }} ^_^
 	Contact:{{ site.email | default: 'su [at] bekti.net' | replace: '@',' [at] ' }}
 	Twitter: @{{site.twitter_username}}
 	From: Yogyakarta, Indonesia
 
 /* THANKS */
 	Readers: The Reader
-	From: All around, the globe
+	From: Earth
 
 /* SITE */
 	Site Generator : Jekyll {{ jekyll.version }}
+	Theme : jekyll-theme-nangka
 	Last update: {{ site.time | date: "%Y/%m/%d"  }}
-	Language: Indonesia
-	Doctype: HTML5
-	IDE: Atom, Visual Studio Code, Git Bash, Google Chrome DevTools
-	Hosting : Github Pages

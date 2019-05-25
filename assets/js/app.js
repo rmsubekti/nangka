@@ -2,10 +2,10 @@
 ---
 //Register service worker
 if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
+    navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
         .then(function(reg) {
             // Registration was successful
-            console.log(reg.scope);
+            //console.log(reg.scope);
 
             // updatefound is fired if service-worker.js changes.
             reg.onupdatefound = function() {

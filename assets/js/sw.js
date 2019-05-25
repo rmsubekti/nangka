@@ -5,11 +5,9 @@ permalink: /sw.js
 "use strict";
 var CACHE_NAME = '{{ site.github.build_revision }}{{ site.time | date: '%Y%m%d%H%M%S' }}';
 var urlsToCache = [
-  '/?utm_source=homescreen','/manifest.json',{% for post in site.posts limit:10 %}{% unless post.redirect_to %}'{{ post.url | prepend: site.baseurl }}',
-  {% endunless %}{% endfor %}{% for page in site.pages %}{% if page.layout %}'{{ page.url | prepend: site.baseurl }}',
-  {% endif %}{% endfor %}'/assets/css/main.css',
-  '/blog.json',
-  '/assets/images/avatar.jpg'
+  '{{ "/manifest.json" | relative_url  }}',{% for post in site.posts limit:10 %}{% unless post.redirect_to %}'{{ post.url | relative_url }}',
+  {% endunless %}{% endfor %}{% for page in site.pages %}{% if page.layout %}'{{ page.url | relative_url  }}',
+  {% endif %}{% endfor %}'{{ "/assets/css/main.css" | relative_url  }}'
 ];
 var idbDatabase;
 var IDB_VERSION = {{ site.time | date: '%Y%m%d' }};
