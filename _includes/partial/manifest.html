@@ -42,11 +42,7 @@
 <!--   Dublin Core metadata -->
 <meta name="DC.title" content="{{ page.title | default: site.title }}" />
 <meta name="DC.creator" content="{{ page.author | default: site.twitter_username}}" />
-{%- if page.editor -%}
-<meta name="DC.contributor" content="{{ page.editor }}" />
-{%- endif -%}
-{%- if page.rights -%}
-<meta name="DC.rights" content="{{ page.rights }}" />
-{%- endif -%}
+{%- if page.editor -%} <meta name="DC.contributor" content="{{ page.editor }}" />{%- endif -%}
+{%- if page.rights -%}<meta name="DC.rights" content="{{ page.rights }}" />{%- endif -%}
 <meta name="DC.date" content="{{ page.date | default: site.time }}" />
 <meta name="DC.source" content="{{ site.title }}" />

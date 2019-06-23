@@ -268,3 +268,27 @@ h3 ~ .site-nav {
     display: none !important;
 }
 
+.data{
+    ul{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        grid-gap: 10px;
+        margin: 0;
+        text-align:center;
+        list-style: none;
+
+        .item{
+            padding: 20px 10px;
+            min-width: 190px;
+            h3,img{
+               margin:0;
+            }
+        }
+        a{
+            text-decoration: none;
+            .item-desc{
+                color: #444;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="{{page.layout}}">
+  <h4 class="page-heading">{{ content }}</h4>
+  {%- for data in site.data[page.data] -%}
+      {%- assign cat = data[1] -%}
+      <section class="section-item">
+        <h2>{{ cat.data_title }}</h2>
+        <ul class="item-list">
+        {%- for item in cat.data -%}
+        <li class="item">
+          <a href="{{ item.link }}">
+            <img src="{{ item.image }}" alt="{{ item.name }}"/>
+            <h3 class="item-title">{{ item.name }}</h3>
+            <p class="item-desc">{{ item.description }}</p>
+          </a>
+        </li>
+        {%- endfor -%}
+        </ul>
+      </section>
+  {%- endfor -%}
+</div>

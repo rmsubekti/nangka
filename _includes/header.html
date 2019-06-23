@@ -1,12 +1,12 @@
 <header class="site-header">
-    {%- if page.layout == "home" or page.layout == "blog" or page.layout == "default"-%}
-    <h1 class="site-title">
-        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
-    </h1>
-    {%- else -%}
+    {%- if page.layout == "post" or page.layout == "page" -%}
     <h3 class="site-title">
         <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
     </h3>
+    {%- else -%}
+    <h1 class="site-title">
+        <a href="{{ '/' | relative_url }}">{{ site.title }}</a>
+    </h1>
     {%- endif -%}
     <nav class="site-nav" role="navigation">
         <input type="checkbox" id="nav-trigger" class="hidden">
