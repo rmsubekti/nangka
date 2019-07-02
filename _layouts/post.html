@@ -22,7 +22,7 @@ layout: default
                 | {{ page.content | number_of_words | divided_by:180 }} Minute Read
             </span>
         </small>
-        {%- include partial/scrimage.html post=page type='microdata' -%}
+        {%- include partial/meta-image.html content=page.content type='microdata' -%}
     </header>
     <div class="post-content" itemprop="articleBody">
         {{ postContent }}

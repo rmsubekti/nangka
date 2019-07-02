@@ -21,7 +21,8 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jemoji", "~> 0.10"
   spec.add_runtime_dependency "jekyll-avatar", "~> 0.6"
   spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.14"
-
+  spec.add_runtime_dependency 'jekyll-github-metadata', '~> 2.12', '>= 2.12.1'
+  
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 12.0"
 end

@@ -1,0 +1,24 @@
+{%- assign article = include.content -%}
+{%- if page.date -%}
+    {%- assign article = page.content -%}
+{%- endif -%}
+{%- assign imageUrl = false -%}
+{%- assign imageAlt = false -%}
+{%- assign images = article | split:'<img' -%}
+{%- for image in images -%}
+  {%- if image contains ' src="' -%}
+    {%- unless imageUrl -%}
+      {%- assign imageUrl = image | remove_first: ' src="' | split:'" alt=' | first -%}
+      {%- if image contains 'alt' -%}
+        {%- assign alt = image | split:'" />' | first -%}
+        {%- assign imageAlt = alt | split:'alt="' | last -%}
+      {%- endif -%} 
+      {%- break -%}
+    {%- endunless -%}
+  {%- endif -%} 
+{%- endfor -%}
+{%- if include.prop == 'alt' -%}
+  {%- if imageAlt -%}{{ imageAlt }}{%- else -%}{{ false }}{%- endif -%}
+{%- else -%}
+  {%- if imageUrl -%}{{ imageUrl }}{%- else -%}{{ false }}{%- endif -%}
+{%- endif -%}

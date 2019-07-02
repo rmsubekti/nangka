@@ -1,22 +1,8 @@
 {%- assign post = include.post -%}
-{%- assign foundImage = false -%}
-{%- assign imgAlt = false -%}
-{%- assign images = post.content | split:"<img " -%}
-{%- for image in images -%}
-  {%- if image contains 'src=' -%}
-    {%- if foundImage == false -%}
-      {%- assign imgAlt = image | split: 'alt="' | last -%}
-      {%- assign imgAlt = capt | split: '" />' | first -%}
-      {%- assign foundImage = image | split:'src="' | last -%}
-      {%- assign foundImage = foundImage | split:'" alt=' | first -%}
-      {% break %}
-    {%- endif -%}
-  {%- endif -%} 
-{%- endfor -%}
-{%- if post.image -%} {%- assign foundImage = post.image -%}{%- endif -%}
-
+{%- capture cover -%}{%- include partial/page-image.html content=post.content -%}{%- endcapture -%}
+{%- capture alt -%}{%- include partial/page-image.html content=post.content prop="alt" -%}{%- endcapture -%}
 <a class="post-item" href="{{ post.url | prepend: site.baseurl }}">  
-    {%- unless foundImage -%}
+    {%- if cover == "false" -%}
     <h3>{{ post.title | capitalize }}</h3>
     <small class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</small>
     <p class="description">
@@ -27,7 +13,7 @@
         {%- endif -%}
     </p>
     {%- else -%}
-    <img src="{{ post.image | default: foundImage }}" alt="{{ imgAlt | default: post.title }}" />
+    <img src="{{ post.image | default: cover }}" alt="{{ alt | default: post.title }}" />
     <div class="image-caption">
       <div class="post-title"><h3>{{ post.title | capitalize }}</h3></div>
       <small class="post-meta">
@@ -36,5 +22,5 @@
         </time>
       </small>
     </div>
-    {%- endunless -%}
+    {%- endif -%}
 </a>

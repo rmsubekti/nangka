@@ -1,0 +1,9 @@
+{%- capture image -%}{%- include partial/page-image.html content=include.content -%}{%- endcapture -%}
+{%- if image != "false" -%}
+  {%- case include.type -%}
+    {%- when 'microdata' -%}
+        <meta itemprop="image" content="{{ post.image | default : image  | default : '/assets/icons/512.png' | absolute_url }}" />
+    {% when 'ogimage' %}
+        <meta  property="og:image" content="{{ image | default : '/assets/icons/512.png' | absolute_url }}" />
+  {% endcase %}
+{% endif %}
