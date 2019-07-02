@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa enim nec dui nunc mattis enim ut. Eget nunc lobortis mattis aliquam faucibus. Fermentum leo vel orci porta. Dignissim cras tincidunt lobortis feugiat vivamus at. Lacinia quis vel eros donec ac. Non consectetur a erat nam at lectus urna duis convallis. Accumsan lacus vel facilisis volutpat est velit egestas. Non quam lacus suspendisse faucibus. Nec nam aliquam sem et tortor consequat. Id donec ultrices tincidunt arcu non sodales neque sodales. Eu mi bibendum neque egestas. Vestibulum lorem sed risus ultricies.
 
-![Pantai](/assets/images/pantai.jpg)
+![Pantai](/nangka/assets/images/pantai.jpg)
 
 Adipiscing commodo elit at imperdiet dui accumsan. Porta non pulvinar neque laoreet suspendisse interdum consectetur. Nam at lectus urna duis convallis convallis tellus id. Tincidunt ornare massa eget egestas purus viverra accumsan in. Id leo in vitae turpis massa sed elementum tempus. Lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Dui sapien eget mi proin. Vitae semper quis lectus nulla at volutpat diam ut. Tellus at urna condimentum mattis pellentesque id nibh. Placerat vestibulum lectus mauris ultrices eros in. Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Lectus vestibulum mattis ullamcorper velit sed. Pretium viverra suspendisse potenti nullam ac tortor vitae purus faucibus. Non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Ultricies mi quis hendrerit dolor magna eget. Elementum integer enim neque volutpat ac tincidunt.
 
