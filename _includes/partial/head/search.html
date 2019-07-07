@@ -1,0 +1,5 @@
+{%- if site.theme_settings.gc_search_id -%}
+<link href="{{ '/opensearch.xml' | relative_url }}" rel="search" title="{{ site.title }}" type="application/opensearchdescription+xml">
+{%- else -%}
+{%- if page.permalink == '/search' -%}<meta http-equiv='refresh' content='0; URL=/404'>{%- endif -%}
+{%- endif -%}

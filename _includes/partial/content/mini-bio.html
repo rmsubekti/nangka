@@ -1,0 +1,16 @@
+{%- assign author_name = site.author | default: site.github.owner_name | default: site.title -%}
+{%- assign author_avatar = site.author_avatar | default: site.github.owner_gravatar_url | default: '/assets/icons/512.png' | relative_url -%}
+<div class="author mini-bio" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <a rel="me" href="http://twitter.com/{{ site.twitter_username }}">
+        <img alt="{{ site.title }}" class="avatar" src="{{ author_avatar }}" width="70" height="70">
+    </a>
+    <div class="author-info"><span class="name" itemprop="name">{{ author_name }}</span><span>{{ site.description }}</span></div>
+    <span class="share">
+      <a class="twitter" id="twitter" aria-labelledby="twitter post-title" href="https://twitter.com/intent/tweet?text={{ page.url | absolute_url | url_encode }} - {{page.title}} by @{{ site.twitter.username }}">
+        <span class="icon">{%- include svg/icon-twitter.svg -%} Tweet</span>
+      </a>
+      <a class="facebook" id="facebook" aria-labelledby="facebook post-title" href="https://www.facebook.com/sharer/sharer.php?u={{ page.url | absolute_url | url_encode }}">
+        <span class="icon">{%- include svg/icon-facebook.svg -%} Share</span>
+      </a>
+  </span>
+</div>

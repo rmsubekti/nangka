@@ -1,10 +1,11 @@
 ---
 layout: default
 ---
+{%- assign post_limit = page.post_limit | default:false -%}
 <div class="home">
-    <h4 class="page-heading">{{ site.description }}</h4>
+    <h4 class="page-description">{{ site.description }}</h4>
     <section class="post-list">
-        {%- for post in site.posts limit:10 -%}
+        {%- for post in site.posts limit:post_limit -%}
         {%- include partial/post-item.html post=post -%}
         {%- endfor -%}
     </section>

@@ -6,6 +6,6 @@ layout: default
         <h1 class="post-title">{{ page.title }}</h1>
     </header>
     <div class="post-content">
-        {{ content | replace: '<a href="http', '<a rel=" noopener external nofollow" target="_blank" href="http' }}
+        {%- include partial/content/body.html -%}
   </div>
 </article>

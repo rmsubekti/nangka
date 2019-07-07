@@ -3,7 +3,7 @@ layout: default
 menu: Blog
 ---
 <div class="home">
-    <h4 class="page-heading">Page {{ paginator.page }}/{{ paginator.total_pages }}</h4>
+    <h4 class="page-description">Page {{ paginator.page }}/{{ paginator.total_pages }}</h4>
     <section class="post-list">
         {%- for post in paginator.posts -%}
         {%- include partial/post-item.html post=post -%}

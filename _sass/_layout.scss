@@ -86,24 +86,28 @@ h3 ~ .site-nav {
     margin-bottom: 1.5rem;
     display: block;
 }
-.cover{
-    max-width: 100vw;
-    position: relative;
-    margin-right: -50vw;
-    right: 50%;
-    margin-left: -50vw;
-    left: 50%;
-    text-align: center;
-    font-style: italic;
-    font-size: small;
-    font-weight: bold;
-    color: rgb(104, 104, 104);
-}
+
 .post-content{
     img{
         display: block;
         margin: 0 auto;
         // max-width: $content-width + 12rem;
+    }
+    .image {
+        text-align: center;
+        font-style: italic;
+        font-size: small;
+        font-weight: bold;
+        color: rgb(104, 104, 104);
+        
+        &.full-width{
+            max-width: 100vw;
+            position: relative;
+            margin-right: -50vw;
+            right: 50%;
+            margin-left: -50vw;
+            left: 50%;
+        }
     }
 }
 .post-item {
@@ -182,9 +186,11 @@ h3 ~ .site-nav {
     margin-top: 1em;
 }
 
+// Author mini bio
 .mini-bio {
     width: 100%;
-    display: block;
+    display: grid;
+    grid-template-columns: 55px auto 160px;
     overflow: auto;
     font-size: 13px;
     font-weight: bold;
@@ -192,29 +198,20 @@ h3 ~ .site-nav {
     border-top: 1px solid #eee;
     padding: 30px 0;
     margin: 40px 0;
-    color: #444;
-}
-
-.author {
-    float: left;
-
+    color: #aaa;
     .avatar {
         height: 36px;
         width: 36px;
-        float: left;
         border-radius: 50%;
-        margin-top: 3px;
-        margin-right: 20px;
+        display: block;
+        margin: 0 auto;
         box-shadow: 0 0 0 3px #fff, 0 0 0 4px #eee;
     }
+}
 
-    div {
-        margin: 0 25px 0 0;
-        float: left;
-    }
-
+.author-info {
+    margin-top: -12px;
     span {
-        color: #aaa;
         font-weight: 500;
         display: block;
 
@@ -225,11 +222,8 @@ h3 ~ .site-nav {
 }
 
 .share {
-    float: right;
-
+    margin-top: 7px;
     a {
-        font-size: 13px;
-        font-weight: bold;
         color: #fff;
         padding: 6px 10px;
         border-radius: 4px;
@@ -254,20 +248,6 @@ h3 ~ .site-nav {
         }
     }
 }
-
-#___gcse_0 *:not(.gsc-above-wrapper-area) {
-    border: none !important;
-    padding: 0 !important;
-}
-
-.gsc-selected-option-container {
-    max-width: 100% !important;
-}
-
-.gcsc-branding {
-    display: none !important;
-}
-
 .data{
     ul{
         display: grid;

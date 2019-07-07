@@ -17,8 +17,9 @@
     {%- endunless -%}
   {%- endif -%} 
 {%- endfor -%}
+
 {%- if include.prop == 'alt' -%}
-  {%- if imageAlt -%}{{ imageAlt }}{%- else -%}{{ false }}{%- endif -%}
+  {{ imageAlt | default: false }}
 {%- else -%}
-  {%- if imageUrl -%}{{ imageUrl }}{%- else -%}{{ false }}{%- endif -%}
+  {{ imageUrl | default: false }}
 {%- endif -%}

@@ -1,16 +1,6 @@
 ---
 layout: default
 ---
-{%- assign postContent = content | replace: '<p><img', '<figure class="cover"><img' | replace: '<a href="http', '<a rel=" noopener external nofollow" target="_blank" href="http' -%}
-{%- assign images = postContent | split:"<img " -%}
-{%- for image in images -%}
-  {%- if image contains 'src=' -%}
-  {%- assign capt = image | split: 'alt="' | last -%}
-  {%- capture capt -%}<figcaption>{{capt | split: '" />' | first }}</figcaption></figure>{%- endcapture -%}
-  {%- assign rependp = image | replace_first: '</p>',capt -%}
-  {%- assign postContent = postContent | replace: image, rependp -%}
-  {%- endif -%} 
-{%- endfor -%}
 <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header class="post-header">
         <h1 class="post-title" itemprop="name headline">{{ page.title | capitalize }}</h1>
@@ -25,7 +15,7 @@ layout: default
         {%- include partial/meta-image.html content=page.content type='microdata' -%}
     </header>
     <div class="post-content" itemprop="articleBody">
-        {{ postContent }}
+        {%- include partial/content/body.html -%}
     <div class="
             hide" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
@@ -37,7 +27,7 @@ layout: default
     </div>
     </div>
     <footer class="post-footer">
-        {%- include partial/mini-bio.html -%}
+        {%- include partial/content/mini-bio.html -%}
         <!-- Post Navigation -->
         <div class="pagination">
             {%- if page.previous.url -%}<a class="prev" href="{{ page.previous.url | prepend: site.baseurl }}">Previous

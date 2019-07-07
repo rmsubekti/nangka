@@ -1,0 +1,19 @@
+{%- assign postContent = page.content | replace: '<a href="http', '<a rel=" noopener external nofollow" target="_blank" href="http' -%}
+{%- assign image_style = '<figure class="image"><img' -%}
+
+{%- if postContent contains '<p><img' -%}
+  {%- if page.image_style and page.image_style == "full-width" -%}
+    {%- assign image_style = image_style | replace: 'image','image full-width' -%}
+  {%- endif -%} 
+  {%- assign postContent = postContent | replace: '<p><img', image_style -%}
+  {%- assign images = postContent | split:"<img " -%}
+  {%- for image in images -%}
+    {%- if image contains 'src=' -%}
+    {%- assign capt = image | split: 'alt="' | last -%}
+    {%- capture capt -%}<figcaption>{{capt | split: '" />' | first }}</figcaption></figure>{%- endcapture -%}
+    {%- assign rependp = image | replace_first: '</p>',capt -%}
+    {%- assign postContent = postContent | replace: image, rependp -%}
+    {%- endif -%} 
+  {%- endfor -%}
+{%- endif -%} 
+{{ postContent }}

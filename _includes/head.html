@@ -7,6 +7,7 @@
     {%- include partial/meta-image.html content=page.content type='ogimage' -%}
     <meta name="generator" content="Jekyll {{ jekyll.version }}" />
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />{%- feed_meta -%}
-    {%- include partial/manifest.html -%}
+    {%- include partial/head/manifest.html -%}
+    {%- include partial/head/search.html -%}
     {%- if site.google_site_verification -%}<meta name="google-site-verification" content="{{site.google_site_verification}}" />{%- endif -%}
 </head>

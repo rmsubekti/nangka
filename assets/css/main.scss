@@ -52,5 +52,6 @@ $on-laptop:        800px;
         "base",
         "layout",
         "syntax-highlighting",
+        {%- if site.theme_settings.gc_search_id -%} "gce", {%- endif -%}
         "print"
 ;
