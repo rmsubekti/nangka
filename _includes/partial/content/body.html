@@ -1,4 +1,4 @@
-{%- assign postContent = page.content | replace: '<a href="http', '<a rel=" noopener external nofollow" target="_blank" href="http' -%}
+{%- assign postContent = include.content | markdownify | replace: '<a href="http', '<a rel=" noopener external nofollow" target="_blank" href="http' -%}
 {%- assign image_style = '<figure class="image"><img' -%}
 
 {%- if postContent contains '<p><img' -%}

@@ -15,7 +15,7 @@ layout: default
         {%- include partial/meta-image.html content=page.content type='microdata' -%}
     </header>
     <div class="post-content" itemprop="articleBody">
-        {%- include partial/content/body.html -%}
+        {%- include partial/content/body.html content=page.content -%}
     <div class="
             hide" itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
             <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
