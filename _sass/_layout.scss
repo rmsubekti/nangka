@@ -30,7 +30,7 @@ h3 ~ .site-nav {
     right: 0;
     padding: 5px 10px;
     background-color: #ebeef2;
-
+    z-index: 1;
     @include media-query($on-palm) {
         background: none;
         padding: 0;
